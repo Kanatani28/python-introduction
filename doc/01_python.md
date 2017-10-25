@@ -237,9 +237,19 @@ Matplotlibパッケージを利用すると様々なグラフを描画できま�
 折れ線グラフ
 ```python
 import matplotlib.pyplot as plt
-data = [2., 2.1, 3.5, 1.1, 4.3, 3.2, 5.3]
-plt.plot(data)
+x = [2., 2.1, 3.5, 1.1, 4.3, 3.2, 5.3]
+plt.plot(x)
+plt.show()
+
+# x軸とy軸両方セットすることもできる
+price = [200, 300, 400, 500, 600]
+count = [31, 29, 26, 28, 25]
+plt.plot(price, count)
+plt.title("count - price") #タイトル
+plt.xlabel("price") #x軸のラベル
+plt.ylabel("count") #y軸のラベル
 plt.show()
 ```
 実行結果
-<img src="img/graph01.png" width="600px">
+<img src="../img/graph01.png" width="500px">
+<img src="../img/graph02.png" width="500px">
