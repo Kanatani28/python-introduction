@@ -250,6 +250,5 @@ plt.xlabel("price") #x軸のラベル
 plt.ylabel("count") #y軸のラベル
 plt.show()
 ```
-実行結果
 <img src="../img/graph01.png" width="500px">
 <img src="../img/graph02.png" width="500px">
