@@ -232,6 +232,52 @@ Pochi: （おなかが空いているようだ...）
 ```
 
 ## numpy
+NumPyライブラリの配列はPython標準のリストよりも効率的に多次元配列を扱うことができ、高速な行列計算が行えます。そういった経緯から機械学習や科学計算で活用されることが多いです。
+```python
+import numpy as np
+line1 = [10, 20, 30]
+line2 = [40, 50, 60]
+line3 = [70, 80, 90]
+
+a = np.array([line1, line2, line3])
+print(a)
+```
+実行結果
+```python
+[[10 20 30]
+ [40 50 60]
+ [70 80 90]]
+```
+> numpyを使うと多次元配列の扱いが楽になります。
+```python
+import numpy as np
+line1 = [10, 20, 30, 40]
+line2 = [50, 60, 70, 80]
+line3 = [90, 100, 110, 120]
+
+a = np.array([line1, line2, line3])
+print(a)
+#多次元→1次元配列に変更
+b = a.ravel()
+print(b)
+
+#1次元→多次元へ変更
+c = b.reshape(6, 2)
+print(c)
+```
+実行結果
+```python
+[[ 10  20  30  40]
+ [ 50  60  70  80]
+ [ 90 100 110 120]]
+[ 10  20  30  40  50  60  70  80  90 100 110 120]
+[[ 10  20]
+ [ 30  40]
+ [ 50  60]
+ [ 70  80]
+ [ 90 100]
+ [110 120]]
+```
 ## matplotlib
 Matplotlibパッケージを利用すると様々なグラフを描画できます。
 折れ線グラフ
@@ -250,5 +296,7 @@ plt.xlabel("price") #x軸のラベル
 plt.ylabel("count") #y軸のラベル
 plt.show()
 ```
+以下のようなグラフが表示されるはずです。
+
 <img src="../img/graph01.png" width="500px">
-<img src="../img/graph02.png" width="500px">
+<img src="../img/graph02.png" width="550px">
