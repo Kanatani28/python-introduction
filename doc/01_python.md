@@ -11,7 +11,7 @@ print("Hello Python")
 ```
 実行結果
 ```python
-print("Hello Python")
+Hello Python
 ```
 
 ### 変数
@@ -157,9 +157,41 @@ print(dogs)
 > リストの方ができることが多くて便利ですが、内容に変更がないことが決まっているならタプルを使う方が実行速度が速くなるなどのメリットがあります。
 
 ### ディクショナリ
-{}を使うことでディクショナリを宣言できます。ディクショナリを宣言することでキーとバリューをマッピングできます。
+{}を使うことでディクショナリを宣言できます。ディクショナリを宣言することでkeyとvalueをマッピングできます。
+ディクショナリをfor文で回すとkeyが取れ、dictionary[key]でvalueが取れます。
 ```python
-dogs = {'Pug':1, 'Shiba':2, 'Chihuahua':3, 'Maltese':4}
+dogs = {'Pug':'Pochi', 'Shiba':'Mame', 'Chihuahua':'John', 'Maltese':'Shiro'}
+for dog in dogs:
+    print(dog, dogs[dog])
 ```
+出力結果
+```python
+Pug Pochi
+Shiba Mame
+Chihuahua John
+Maltese Shiro
+```
+
+### 関数
+Pythonではdefキーワードを使って関数を定義できます。
+繰り返し利用する処理や長いコードは関数としてまとめると便利になります。
+```python
+# 足し算をする関数
+def sum(x, y):
+    result = x + y
+    return result
+
+# 関数を定義することで引数 x, yを変えるだけで処理ができる
+print(sum(1, 2))
+print(sum(10, 5))
+```
+実行結果
+```python
+3
+15
+```
+
+### クラス
+
 ## numpy
 ## matplotlib
