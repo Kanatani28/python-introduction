@@ -71,7 +71,7 @@ else: # 上記の条件以外の時
    
 実行結果
 ```python
-OK John
+OK Bob
 ```
 
 ### for文
@@ -191,7 +191,45 @@ print(sum(10, 5))
 15
 ```
 
-### クラス
+### クラスとインスタンス
+数値、文字列、リスト、タプル、辞書など、Pythonのデータは全てがクラスから作られたオブジェクトです。クラスを定義することで独自のオブジェクトを作ることができます。   
+クラスとはオブジェクトの設計書です。クラスから作ったオブジェクトのことをインスタンスと呼びます。
+```python
+class Dog:
+    # インスタンスを生成するためのメソッド
+    def __init__(self, name, energy):
+        self.name = name
+        self.energy = energy
+
+    def bark(self):
+        if self.energy > 0:
+            self.energy = self.energy - 1
+            print("{}: わんわん".format(self.name))
+        else:
+            print("{}: （おなかが空いているようだ...）".format(self.name))
+
+# インスタンス生成
+dog1 = Dog('Pochi', 3)
+dog2 = Dog('Shiro', 4)
+
+for i in range(5):
+    dog1.bark()
+    dog2.bark()
+
+```
+実行結果
+```python
+Pochi: わんわん
+Shiro: わんわん
+Pochi: わんわん
+Shiro: わんわん
+Pochi: わんわん
+Shiro: わんわん
+Pochi: （おなかが空いているようだ...）
+Shiro: わんわん
+Pochi: （おなかが空いているようだ...）
+Pochi: （おなかが空いているようだ...）
+```
 
 ## numpy
 ## matplotlib
