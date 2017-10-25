@@ -233,3 +233,13 @@ Pochi: （おなかが空いているようだ...）
 
 ## numpy
 ## matplotlib
+Matplotlibパッケージを利用すると様々なグラフを描画できます。
+折れ線グラフ
+```python
+import matplotlib.pyplot as plt
+data = [2., 2.1, 3.5, 1.1, 4.3, 3.2, 5.3]
+plt.plot(data)
+plt.show()
+```
+実行結果
+<img src="img/graph01.png" width="600px">
