@@ -2,6 +2,8 @@
 ## Pythonとは
 PythonはWeb、組み込み、ゲームを始め、近年では機械学習の分野で注目されているプログラミング言語です。
 インデントでスコープを表現したり、コード量が比較的少なくて済むので、シンプルにプログラムを書くことができます。
+### (参考)Pythonを使っている製品あるいはソフトウェアの一覧
+https://ja.m.wikipedia.org/wiki/Pythonを使っている製品あるいはソフトウェアの一覧
 
 ## 基本文法
 ### Hello Python
@@ -372,6 +374,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # numpyで作成したデータを表示する
+# 平均 50 標準偏差 10 データ数 10000
 x = np.random.normal(50, 10, 100)
 
 plt.hist(x)
