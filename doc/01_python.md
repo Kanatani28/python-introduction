@@ -228,7 +228,7 @@ Shiro: わんわん
 Pochi: （おなかが空いているようだ...）
 Shiro: わんわん
 Pochi: （おなかが空いているようだ...）
-Pochi: （おなかが空いているようだ...）
+Shiro: （おなかが空いているようだ...）
 ```
 
 ## numpy
@@ -239,6 +239,7 @@ line1 = [10, 20, 30]
 line2 = [40, 50, 60]
 line3 = [70, 80, 90]
 
+#a = np.arange(10, 100, 10).reshape(3, 3) #同じ結果
 a = np.array([line1, line2, line3])
 print(a)
 ```
@@ -248,7 +249,8 @@ print(a)
  [40 50 60]
  [70 80 90]]
 ```
-> numpyを使うと多次元配列の扱いが楽になります。
+> arange([start,] stop[, step])       
+numpyを使うと多次元配列の扱いが楽になります。
 ```python
 import numpy as np
 line1 = [10, 20, 30, 40]
@@ -278,9 +280,72 @@ print(c)
  [ 90 100]
  [110 120]]
 ```
+### 配列の演算
+NumPy配列の演算はブロードキャストと呼ばれる機能により、行列に数値演算を行ったり、形の違う行列同士を演算できます。
+```python
+import numpy as np
+# numpy配列生成
+a = np.array([10, 20, 30, 40]).reshape(2, 2)
+print(a)
+
+#配列と数値
+b = a + 5
+# 全ての要素に5足される
+print(b)
+
+c = np.array([1, 2])
+d = np.array([1, 2]).reshape(2, 1)
+#配列と配列
+print(a + b)
+print(a + c) # [10 + 1, 20 + 2] [30 + 1, 40 + 2]
+print(a + d) #[10 + 1, 20 + 1] [30 + 2, 40 + 2]
+# e = np.array([1, 2, 3, 4, 5])
+#print(a + e) #行数か列数どちらかが同じでないとエラーになる
+```
+実行結果
+```python
+[[10 20]
+ [30 40]]
+[[15 25]
+ [35 45]]
+[[25 45]
+ [65 85]]
+[[11 22]
+ [31 42]]
+[[11 21]
+ [32 42]]
+```
+numpyには様々な関数が用意されています。
+```python
+import numpy as np
+a = np.array([[1, 2], [3, 4]])
+print(a.sum()) #合計
+print(a.max()) #最大値
+print(a.min(0)) #最小値
+print(a.mean(1)) #平均
+
+b = np.array([[5, 6], [7, 8]])
+# 内積
+c = np.dot(a, b)
+print(c)
+# 外積
+d = np.cross(a, b)
+print(d)
+```
+実行結果
+```python
+10
+4
+[1 2]
+[ 1.5  3.5]
+[[19 22]
+ [43 50]]
+[-4 -4]
+```
+> sum(),max(),min(),mean()に関しては引数に0か1を与えることで行ごと、列ごとの結果を出せます
 ## matplotlib
 Matplotlibパッケージを利用すると様々なグラフを描画できます。
-折れ線グラフ
+折れ線グラフは以下のように実装します。
 ```python
 import matplotlib.pyplot as plt
 x = [2., 2.1, 3.5, 1.1, 4.3, 3.2, 5.3]
@@ -300,3 +365,15 @@ plt.show()
 
 <img src="../img/graph01.png" width="500px">
 <img src="../img/graph02.png" width="550px">
+ヒストグラムを使用するときはplt.hist()を利用します。
+   
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# numpyで作成したデータを表示する
+x = np.random.normal(50, 10, 100)
+
+plt.hist(x)
+plt.show()
+```
