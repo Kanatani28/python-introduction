@@ -377,3 +377,7 @@ x = np.random.normal(50, 10, 100)
 plt.hist(x)
 plt.show()
 ```
+以下のようなグラフが生成されるはずです
+
+    
+<img src="../img/graph03.png" width="550px">
