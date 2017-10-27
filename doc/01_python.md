@@ -5,6 +5,9 @@ PythonはWeb、組み込み、ゲームを始め、近年では機械学習の�
 ### (参考)Pythonを使っている製品あるいはソフトウェアの一覧
 https://ja.m.wikipedia.org/wiki/Pythonを使っている製品あるいはソフトウェアの一覧
 
+## 環境構築
+https://www.continuum.io/downloads
+
 ## 基本文法
 ### Hello Python
 print関数を使って画面に文字を出力します。
@@ -64,7 +67,7 @@ name = "Bob"
 age = 20
 license = True
 
-if age >= 20 and license:　# age >= 20 がTrue かつ license がTrue
+if age >= 20 and license:# age >= 20 がTrue かつ license がTrue
     print("OK {}".format(name))
 else: # 上記の条件以外の時
     print("NG")
